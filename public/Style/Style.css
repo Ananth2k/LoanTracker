@@ -1,0 +1,36 @@
+body {
+  background-color: #222222 !important;
+}
+body a, body li {
+  text-decoration: none;
+}
+body p, body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: #aaaaaa;
+}
+
+a {
+  color: #ffffff;
+}
+a:hover {
+  color: #aaaaaa;
+}
+
+.add-button {
+  background-color: green;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+}
+.add-button svg {
+  stroke: #ffffff;
+}
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #222222;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=Style.css.map */
