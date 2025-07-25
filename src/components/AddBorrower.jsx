@@ -63,14 +63,14 @@ const navigate = useNavigate();
                 required
                 min="0"
               />
-            </div>
-            <button className="btn btn-secondary w-100" onClick={() => navigate('/')}>Back to List</button>
+            </div>           
 
             <button type="submit" className="btn btn-primary w-100">Create</button>
           </form>
         </div>
-      </div>
 
+        
+      </div>
 
     </div>
   );

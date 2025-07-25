@@ -15,6 +15,10 @@ a:hover {
   color: #aaaaaa;
 }
 
+li {
+  list-style-type: none;
+}
+
 .add-button {
   background-color: green;
   color: #ffffff;
@@ -33,4 +37,48 @@ a:hover {
   z-index: 1000;
   background-color: #222222;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.borrower-card {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+.borrower-card:hover {
+  background-color: #404040;
+}
+
+.amount {
+  font-size: 10px;
+}
+
+.date {
+  font-size: 10px;
+}
+
+.home-profile {
+  width: 100px;
+  height: 100px;
+}
+
+.home-bottom {
+  background-color: #ffffff;
+  position: fixed;
+  border: 0;
+  /* bottom: 0; */
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.home-details-card {
+  background-color: #DDE7FE;
+}
+.home-details-card span {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
 }/*# sourceMappingURL=Style.css.map */

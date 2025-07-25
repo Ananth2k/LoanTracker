@@ -45,20 +45,20 @@ useEffect(() => {
       ) : (
         <ul className="list-group">
           {borrowers.map(borrower => (
-             <Link to={`/borrower/${borrower.id}`} className="text-decoration-none list-group-item">
+             <Link to={`/borrower/${borrower.id}`} className="text-decoration-none my-1 borrower-card">
             <li key={borrower.id} className=" d-flex justify-content-between align-items-center">
              <div>
               {borrower.name}
              </div>
              {borrower.createdAt &&(
-                <span>
+                <span className='date d-none'>
                   Date: {new Date(borrower.createdAt.seconds * 1000).toLocaleString()}
                 </span>
              )}
              
                 
               
-              <span className="badge bg-danger rounded-pill">{borrower.amount} Rs</span>
+              <span className="amount fw-bold rounded-pill">{borrower.amount} Rs</span>
             </li>
             </Link>
           ))}
