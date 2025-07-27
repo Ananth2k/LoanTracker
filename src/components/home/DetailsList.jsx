@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DetailsList() {
+function DetailsList({list}) {
   return (
                      <li className='mb-3 mt-3'>
                         <div className='d-flex rounded-4 p-2 home-details-card align-items-center justify-content-between'>
@@ -11,7 +11,7 @@ function DetailsList() {
 <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
                             </span>
-                            <h5 className='fs-6 mb-0 text-dark'>Personal details</h5>
+                            <h5 className='fs-6 mb-0 text-dark'>Borrower List</h5>
 
                            </div>
                    

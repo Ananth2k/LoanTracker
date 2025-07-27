@@ -3,20 +3,31 @@ import { db } from '../firebase'; // adjust the path if needed
 import { addDoc, collection } from "firebase/firestore";
 import { Timestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
 
 
 function AddBorrower() {
   const [borrowerName, setBorrowerName] = useState('');
   const [borrowAmount, setBorrowAmount] = useState('');
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
+
   const borrowerHandler = async (e) => {
     e.preventDefault();
+
+    const auth = getAuth();
+    const user  = auth.currentUser;
+    if (!user) {
+      alert("You must be logged in to add a borrower.");
+      return;
+    }
 
     try {
       await addDoc(collection(db, "borrowers"), {
         name: borrowerName,
         amount: parseInt(borrowAmount),
-        createdAt: Timestamp.now()
+        createdAt: Timestamp.now(),
+        financierId: user.uid,
       });
       alert("Borrower added successfully");
 

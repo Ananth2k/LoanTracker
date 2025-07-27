@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase'; // Adjust the path as needed
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
 
 function BorrowerList() {
 
@@ -10,21 +11,35 @@ const [borrowers, setBorrowers] = useState([]);
 const navigate = useNavigate();
 
 useEffect(() => {
-    const fetchBorrowers = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, 'borrowers'));
-        const borrowerData = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setBorrowers(borrowerData);
-      } catch (error) {
-        console.error("Error fetching borrowers:", error);
-      }
-    };
+  const fetchBorrowers = async () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
 
-    fetchBorrowers();
-  }, []); 
+    if (!user) {
+      console.log("User not logged in");
+      return;
+    }
+
+    try {
+      const q = query(
+        collection(db, 'borrowers'),
+        where("financierId", "==", user.uid)
+      );
+
+      const querySnapshot = await getDocs(q);
+      const borrowerData = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setBorrowers(borrowerData);
+    } catch (error) {
+      console.error("Error fetching borrowers:", error);
+    }
+  };
+
+  fetchBorrowers();
+}, []);
+
 
    const handleCrate = () => {
     return navigate('/add-borrower');
