@@ -6,37 +6,29 @@ import { getAuth } from 'firebase/auth'
 function Home() {
 
 const auth = getAuth();
-const financier = auth.currentUser ? auth.currentUser.email : "Guest";
+const financierName = auth.currentUser ? auth.currentUser.email : "Guest";
+const finacierProfile =  "/images/dummy-profile.png";
 
   return (
     <div className='home-container position-relative'>
-
         <div className='home-top container pt-5 pb-5'>
-           <h2>Home</h2>
-           <div className='d-flex align-items-center'>
-            <img className="home-profile  me-3" src="/images/dummy-profile.png" alt="Dummy Profile" />
+           <h2 className='fs-12 text-white'>Home</h2>
+           <div className='d-flex align-items-center py-3'>
+            
+            <img className="home-profile  me-3" src={finacierProfile} alt="Dummy Profile" />
             <div className='ms-3'>
-                <p>Hello</p>
-                <h2>{financier}</h2>
+                <p className='fs-10 text-white'>Hello</p>
+                <h2  className="text-truncate text-white" style={{ width: '200px' }}>{financierName}</h2>
             </div>
            </div>
         </div>
-        <div className='home-bottom p-3'>
-            <div className='p-2 container'>
+        <div className='home-bottom px-2'>
+            <div className='px-1 container'>
                 <ul className='ps-0 mb-0' >
- <Link to="/borrowers-list" className="text-decoration-none">
-  <DetailsList/>
- </Link>
-                   
-                    <DetailsList/>
-                    
-                      <DetailsList/>
-                    
+                  <DetailsList/>                    
                 </ul>
             </div>
         </div>
-
-
     </div>
   )
 }

@@ -48,7 +48,7 @@ li {
   transition: background-color 0.3s ease;
 }
 .borrower-card:hover {
-  background-color: #404040;
+  background-color: rgb(63.75, 63.75, 63.75);
 }
 
 .amount {
@@ -60,8 +60,8 @@ li {
 }
 
 .home-profile {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 
 .home-bottom {
@@ -75,10 +75,17 @@ li {
 }
 
 .home-details-card {
-  background-color: #DDE7FE;
+  background-color: #F3FFF7;
 }
 .home-details-card span {
   padding: 10px;
   border-radius: 10px;
   background-color: #ffffff;
+}
+.custom-bg-green-icon {
+  background-color: #D1FFE1;
+}
+
+.home-bg {
+  background: linear-gradient(180deg, rgb(170, 255, 201) 0%, rgb(255, 255, 255) 60%, rgb(255, 255, 255) 100%);
 }/*# sourceMappingURL=Style.css.map */

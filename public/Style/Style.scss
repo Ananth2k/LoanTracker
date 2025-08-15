@@ -4,7 +4,7 @@ $primary-light-background-color: #ffffff;
 $secondary-light-background-color: #f0f0f0;
 $primary-dark-background-color: #222222;        
 $secondary-dark-background-color: #333333;
-$theme-color:#DDE7FE;
+$theme-color:#F3FFF7;
 
 body{
     background-color: $primary-dark-background-color !important;
@@ -75,8 +75,8 @@ li{
         font-size: 10px;
     }
 .home-profile{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 
 .home-bottom{
@@ -100,4 +100,11 @@ li{
      
     }
  }
+}
+
+.custom-bg-green-icon{
+    background-color: #D1FFE1;
+}
+.home-bg{
+    background: linear-gradient(180deg,rgba(170, 255, 201, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 1) 100%);
 }
